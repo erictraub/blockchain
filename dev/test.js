@@ -4,7 +4,7 @@ const bitcoin = new Blockchain();
 const previousBlockHash = 'OINAISDFN09N09ASDNF90N90ASNDF';
 const currentBlockData = [
 	{
-		amount: 10,
+		amount: 101,
 		sender: 'N90ANS90N90ANSDFN',
 		recipient: '90NA90SNDF90ANSDF09N'
 	},
@@ -19,11 +19,12 @@ const currentBlockData = [
 		recipient: 'AUSDF89ANSD9FNASD'
 	}
 ];
-const nonce = 100;
+
+
+console.log(bitcoin.hashBlock(previousBlockHash, currentBlockData, 27470));
 
 
 
-console.log(bitcoin.hashBlock(previousBlockHash, currentBlockData, nonce));
 
 
 
