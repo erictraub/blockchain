@@ -29,6 +29,6 @@ In this course you will learn all of the following concepts and your blockchain 
 - Many other awesome features!...
 
 When you have completed this course you will have built out **your own blockchain prototype in code**.  You will have a thorough understanding of how blockchain technology actually works and why this technology is so **secure and valuable**.  You will also have a deep understanding of how decentralized blockchain networks function and why decentralization is such an important feature for securing the blockchain. The whole process of **storing, securing, and validating data/transactions** on the blockchain will become very clear.
-<br/><br/><br/>
+<br/><br/><br/><br/>
 ###### Copyright Disclaimer
-The code in this repository is property of Eric Traub (owner). The code, all or portions of it, is not to be distributed in any way without written permission from the owner.  The code is protected under United States copyright laws.
+###### The code in this repository is property of Eric Traub (owner). The code, all or portions of it, is not to be distributed in any way without written permission from the owner.  The code is protected under United States copyright laws.
