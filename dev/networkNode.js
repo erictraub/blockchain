@@ -29,6 +29,7 @@ app.post('/transaction', function(req, res) {
 });
 
 
+// broadcast transaction
 app.post('/transaction/broadcast', function(req, res) {
 	const newTransaction = bitcoin.createNewTransaction(req.body.amount, req.body.sender, req.body.recipient);
 	bitcoin.addTransactionToPendingTransactions(newTransaction);
@@ -50,7 +51,6 @@ app.post('/transaction/broadcast', function(req, res) {
 		res.json({ note: 'Transaction created and broadcast successfully.' });
 	});
 });
-
 
 
 // mine a block
@@ -101,6 +101,7 @@ app.get('/mine', function(req, res) {
 });
 
 
+// receive new block
 app.post('/receive-new-block', function(req, res) {
 	const newBlock = req.body.newBlock;
 	const lastBlock = bitcoin.getLastBlock();
@@ -180,7 +181,7 @@ app.post('/register-nodes-bulk', function(req, res) {
 });
 
 
-
+// consensus
 app.get('/consensus', function(req, res) {
 	const requestPromises = [];
 	bitcoin.networkNodes.forEach(networkNodeUrl => {
@@ -227,7 +228,7 @@ app.get('/consensus', function(req, res) {
 });
 
 
-
+// get block by blockHash
 app.get('/block/:blockHash', function(req, res) { 
 	const blockHash = req.params.blockHash;
 	const correctBlock = bitcoin.getBlock(blockHash);
@@ -237,6 +238,7 @@ app.get('/block/:blockHash', function(req, res) {
 });
 
 
+// get transaction by transactionId
 app.get('/transaction/:transactionId', function(req, res) {
 	const transactionId = req.params.transactionId;
 	const trasactionData = bitcoin.getTransaction(transactionId);
@@ -247,6 +249,7 @@ app.get('/transaction/:transactionId', function(req, res) {
 });
 
 
+// get address by address
 app.get('/address/:address', function(req, res) {
 	const address = req.params.address;
 	const addressData = bitcoin.getAddressData(address);
@@ -256,6 +259,7 @@ app.get('/address/:address', function(req, res) {
 });
 
 
+// block explorer
 app.get('/block-explorer', function(req, res) {
 	res.sendFile('./block-explorer/index.html', { root: __dirname });
 });
